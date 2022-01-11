@@ -1,29 +1,44 @@
 <?php
-//connect to db
-// check if $post['recipeid'] 
-// create sql to update  recipe
-//prepare sql statment $stmt
-//execute array stmt
-//redirect to home
+require_once "../backend/pdo.php";
+if (
+    isset($_POST['title']) && isset($_POST['recipe'])
+    && isset($_POST['author']) && isset($_POST['recipe_id'])
+) {
+    $sql = "UPDATE recipes SET title = :title,
+recipe = :recipe, author = :author
+WHERE recipe_id = :recipe_id";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(array(
+        ':title' => $_POST['title'],
+        ':recipe' => $_POST['recipe'],
+        ':author' => $_POST['author'],
+        ':recipe_id' => $_POST['recipe_id']
+    ));
+    header('Location: Recipes.php');
+    return;
+}
+$stmt = $pdo->prepare("SELECT * FROM recipes where recipe_id = :xyz");
+$stmt->execute(array(":xyz" => $_GET['recipe_id']));
+$row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-//create sql to get recipe by id
-//prepare stmt 
-//execute and fetch
-
-
+$title = htmlentities($row['title']);
+$recipe = htmlentities($row['recipe']);
+$author = htmlentities($row['author']);
+$recipe_id = $row['recipe_id'];
 ?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    update
-</body>
-
-</html>
+<p>Edit User</p>
+<form method="post">
+    <p>Name:
+        <input type="text" name="title" value="<?= $title ?>">
+    </p>
+    <p>Email:
+        <input type="text" name="recipe" value="<?= $recipe ?>">
+    </p>
+    <p>Password:
+        <input type="text" name="author" value="<?= $author ?>">
+    </p>
+    <input type="hidden" name="recipe_id" value="<?= $recipe_id ?>">
+    <p><input type="submit" value="Update" />
+        <a href="index.php">Cancel</a>
+    </p>
+</form>

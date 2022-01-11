@@ -1,10 +1,16 @@
 <?php
-//check if get['recipeid'] is exist
-//create sql to display recipe
-//prepare stmt
-//execute & fetch
-
+include_once('../backend/pdo.php');
+$id = $_GET['id'];
+if (isset($id)) {
+    $sql = "SELECT * FROM recipes WHERE recipe_id = :id";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(array(
+        ':id' => $id
+    ));
+    $recipe = $stmt->fetch(PDO::FETCH_ASSOC);
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +23,14 @@
 </head>
 
 <body>
-    detailrecipe
+    <h1>recipe detail</h1>
+
+    <h6><?php echo $recipe['title']; ?></h6>
+    <p><?php echo $recipe['recipe']; ?></p>
+    <div>
+        <label>Author : </label>
+        <p><?php echo $recipe['author'] ?></p>
+    </div>
 </body>
 
 </html>
