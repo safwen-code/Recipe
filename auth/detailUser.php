@@ -25,8 +25,8 @@ if (isset($_GET['user_id'])) {
         <span>Name : <?php echo $user['full_name'] ?></span>
         <span>Email :<?= $user['email'] ?></span>
         <sapn>password :<?= $user['password'] ?></sapn>
-        <button type="submit"><a href="">update user</a></button>
-        <button type="submit"><a href="">delete user</a></button>
+        <button type="submit"><a href="updateUser.php?user_id=<?php echo $user['user_id']; ?>">update user</a></button>
+        <button type="submit"><a href="deleteUser.php?user_id=<?php echo $user['user_id'] ?>">delete user</a></button>
     </form>
 </body>
 
