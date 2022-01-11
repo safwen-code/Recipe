@@ -13,9 +13,13 @@ include_once('./variabels.php')
 </head>
 
 <body>
+    <?php include_once('./login.php') ?>
     <?php foreach ($users as $user) : ?>
         <div>
-            <h1>fullName : <?= $user['full_name'] ?> </h1>
+            <h1>
+                <a href="detailUser.php?user_id=<?= $user['user_id'] ?>">
+                    fullName : <?= $user['full_name'] ?></a>
+            </h1>
             <span>email :<?= $user['email'] ?> </span>
             <p>password :<?= $user['password'] ?> </p>
         </div>
