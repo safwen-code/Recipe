@@ -25,8 +25,8 @@
                             <?php echo $recipe['recipe']; ?>
                         </p>
                         <div class=" d-flex ">
-                            <a href="updateRecipe.php?recipe_id=<?php echo $recipe['recipe_id']; ?>" class="btn btn-primary mx-3">Edite Recipe</a>
-                            <a href="deleteRecipe.php?recipe_id=<?php echo $recipe['recipe_id']; ?>" class="ms-3 btn btn-primary">Delete Recipe</a>
+                            <a href="./controllerUpdate.php?recipe_id=<?php echo $recipe['recipe_id']; ?>" class="btn btn-primary mx-3">Edite Recipe</a>
+                            <a href="./controllerDelete.php?recipe_id=<?php echo $recipe['recipe_id']; ?>" class="ms-3 btn btn-primary">Delete Recipe</a>
                         </div>
                     </div>
                 </div>

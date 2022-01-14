@@ -39,3 +39,36 @@ function GETRecipeById($id)
         echo 'Caught exception: ',  $e->getMessage(), "\n";
     }
 }
+
+function updateRecipe($id, $title, $recipe, $author)
+{
+    try {
+        $pdo = connectdb();
+        $sql = "UPDATE recipes SET title = :title,
+                 recipe = :recipe, author = :author
+        WHERE recipe_id = :recipe_id";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute(array(
+            ':title' => $title,
+            ':recipe' => $recipe,
+            ':author' => $author,
+            ':recipe_id' => $id
+        ));
+    } catch (Exception $e) {
+        echo 'Caught exception: ',  $e->getMessage(), "\n";
+    }
+}
+
+function deleteRecipe($id)
+{
+    try {
+        $pdo = connectdb();
+        $sql = "DELETE FROM recipes WHERE recipe_id = :id ";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([
+            ':id' => $id
+        ]);
+    } catch (Exception $e) {
+        echo 'Caught exception: ',  $e->getMessage(), "\n";
+    }
+}
