@@ -18,7 +18,7 @@
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
                         <p class="card-text">
-                            <a href="./detailRecipe.php?id=<?php echo $recipe['recipe_id']; ?>">
+                            <a href="./controllerDetail.php?recipe_id=<?php echo $recipe['recipe_id']; ?>">
                                 <?php echo $recipe['title']; ?></a>
                         </p>
                         <p class="lead">
