@@ -21,11 +21,6 @@ if (
     header('Location: Recipes.php');
     return;
 }
-
-
-
-
-
 ?>
 
 
@@ -37,16 +32,30 @@ if (
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 </head>
 
 <body>
-    add recipe
-    <form method="post">
-        title : <input type="text" name="title" value="" />
-        recipe : <input type="text" name="recipe" value="" />
-        author : <input type="text" name="author" value="" />
-        <input type="submit" value="add recipe" />
-    </form>
+    <?php include_once('../layout/navbar.php') ?>
+    <div class="container">
+        <h5 class="d-flex justify-content-center mt-3">add recipe</h5>
+        <form method="post">
+            <div class="mb-3">
+                <label class="form-label">titel</label>
+                <input type="text" class="form-control" name="titel">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">recipe</label>
+                <input type="text" class="form-control" name="recipe">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">author</label>
+                <input type="text" class="form-control" name="author">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
 </body>
 
 </html>
