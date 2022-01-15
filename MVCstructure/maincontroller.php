@@ -34,7 +34,5 @@ function UpdateByID($idGet, $idPost, $title, $recipe, $author)
 function AddRecipe($title, $recipe, $author)
 {
     require_once('add.php');
-    echo $title;
-    echo $recipe;
-    echo $author;
+    postRecipe($title, $recipe, $author);
 }
