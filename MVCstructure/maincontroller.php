@@ -22,9 +22,11 @@ function DeleteById($idGet, $idPost)
 }
 function UpdateByID($idGet, $idPost, $title, $recipe, $author)
 {
-    $recipe = GetRecipeByID($idGet);
+    $row = GETRecipeById($idGet);
     require_once('updateRecipe.php');
-    if (isset($idPost) && isset($title) && isset($recipe) && isset($author)) {
+    if (isset($idPost)) {
         updateRecipe($idPost, $title, $recipe, $author);
+        header('Location: index.php');
+        return;
     }
 }

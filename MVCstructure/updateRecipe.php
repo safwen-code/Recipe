@@ -15,26 +15,26 @@
     <div class="container mt-3">
 
         <h3 class="d-flex justify-content-center">Edit User</h3>
-        <form method="post">
+        <form method="post" action="">
             <div class="row mb-3">
                 <label class="col-sm-2 col-form-label">titel:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" name="title" value="<?= $recipe['title'] ?>">
+                    <input type="text" class="form-control" name="title" value="<?= $row['title'] ?>">
                 </div>
             </div>
             <div class="row mb-3">
                 <label class="col-sm-2 col-form-label"> recipe:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" name="recipe" value="<?= $recipe['recipe'] ?>">
+                    <input type="text" class="form-control" name="recipe" value="<?= $row['recipe'] ?>">
                 </div>
             </div>
             <div class="row mb-3">
                 <label class="col-sm-2 col-form-label">author:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" name="author" value="<?= $recipe['author'] ?>">
+                    <input type="text" class="form-control" name="author" value="<?= $row['author'] ?>">
                 </div>
             </div>
-            <input type="hidden" class="form-control" name="recipe_id" value="<?= $recipe['recipe_id'] ?>">
+            <input type="input" class="form-control" name="recipe_id" value="<?= $row['recipe_id'] ?>">
             <div class="col">
                 <button type="submit" class="btn btn-primary mx-3">editeUser</button>
                 <a href="index.php">Cancel</a>

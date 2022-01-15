@@ -11,7 +11,11 @@ if (isset($_GET['action'])) {
         deletebyId($idGet, $idPost);
     } elseif ($_GET['action'] == "updateRecipe") {
         $idGet = $_GET['recipe_id'];
-        UpdateByID($idGet, $_POST['recipe_id'], $_POST['title'], $_POST['recipe'], $_POST['author']);
+        $idPost = $_POST['recipe_id'];
+        $title = $_POST['title'];
+        $recipe = $_POST['recipe'];
+        $author = $_POST['author'];
+        UpdateByID($idGet, $idPost, $title, $recipe, $author);
     }
 } else {
     AllRecipes();

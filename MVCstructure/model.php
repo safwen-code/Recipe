@@ -44,13 +44,14 @@ function updateRecipe($id, $title, $recipe, $author)
     $pdo = connectdb();
     $sql = "UPDATE recipes SET title = :title,
         recipe = :recipe, author = :author
-        WHERE recipe_id = :recipe_id";
+        WHERE recipe_id = :id";
     $stmt = $pdo->prepare($sql);
     $stmt->execute(array(
+      ':id' => $id,
       ':title' => $title,
       ':recipe' => $recipe,
       ':author' => $author,
-      ':recipe_id' => $id
+
     ));
   } catch (Exception $e) {
     echo 'Caught exception: ', $e->getMessage(), "\n";

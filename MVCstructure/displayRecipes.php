@@ -25,6 +25,9 @@
                             <p class="lead">
                                 <?php echo $recipe['recipe']; ?>
                             </p>
+                            <p class="lead">
+                                <?php echo $recipe['author']; ?>
+                            </p>
                             <div class=" d-flex ">
                                 <a href="./index.php?action=updateRecipe&amp;recipe_id=<?php echo $recipe['recipe_id']; ?>" class="btn btn-primary mx-3">Edite Recipe</a>
                                 <a href="./index.php?action=deleteRecipe&amp;recipe_id=<?php echo $recipe['recipe_id']; ?>" class="ms-3 btn btn-primary">Delete Recipe</a>
