@@ -12,8 +12,10 @@
 
 <body>
     <?php include_once('../layout/navbar.php') ?>
-    <div class="container">
-        <form methode="get" action="detailRecipe.php">
+    <div class="container mt-3">
+        <h1>recipe detail</h1>
+
+        <form methode="get" action="detailRecipe">
             <h6><?php echo $recipe['title']; ?></h6>
             <p><?php echo $recipe['recipe']; ?></p>
             <div>
@@ -21,7 +23,6 @@
                 <p><?php echo $recipe['author'] ?></p>
             </div>
         </form>
-        <h1>recipe detail</h1>
 
 
     </div>

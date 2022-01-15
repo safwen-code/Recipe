@@ -19,7 +19,7 @@
                     <div class="card" style="width: 18rem;">
                         <div class="card-body">
                             <p class="card-text">
-                                <a href="./router.php?action=detailRecipe&amp;recipe_id=<?= $recipe['recipe_id'] ?>">
+                                <a href="index.php?action=detailRecipe&amp;recipe_id=<?= $recipe['recipe_id'] ?>">
                                     <?php echo $recipe['title']; ?></a>
                             </p>
                             <p class="lead">

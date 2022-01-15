@@ -5,9 +5,10 @@ function AllRecipes()
     $recipes = GetAllRecipe();
     require('displayRecipes.php');
 }
-function RecipesByID()
+function RecipesByID($id)
 {
-    echo "fuck you";
+    $recipe = GETRecipeById($id);
+    require('detailRecipe.php');
 }
 function DeleteById()
 {

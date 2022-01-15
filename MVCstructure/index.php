@@ -4,7 +4,7 @@ if (isset($_GET['action'])) {
     if ($_GET['action'] == "listRecipes") {
         AllRecipes();
     } else if ($_GET['action'] == "detailRecipe") {
-        RecipesByID();
+        RecipesByID($_GET['recipe_id']);
     }
 } else {
     AllRecipes();
