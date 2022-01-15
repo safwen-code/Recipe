@@ -16,6 +16,8 @@ if (isset($_GET['action'])) {
         $recipe = $_POST['recipe'];
         $author = $_POST['author'];
         UpdateByID($idGet, $idPost, $title, $recipe, $author);
+    } elseif ($_GET['action'] = "post") {
+        AddRecipe($_POST['title'], $_POST['recipe'], $_POST['author']);
     }
 } else {
     AllRecipes();

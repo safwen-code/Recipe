@@ -17,7 +17,7 @@ function DeleteById($idGet, $idPost)
     if (isset($idPost)) {
         deleteRecipe($idPost);
         header('Location: index.php');
-        return;
+        exit();
     }
 }
 function UpdateByID($idGet, $idPost, $title, $recipe, $author)
@@ -27,6 +27,14 @@ function UpdateByID($idGet, $idPost, $title, $recipe, $author)
     if (isset($idPost)) {
         updateRecipe($idPost, $title, $recipe, $author);
         header('Location: index.php');
-        return;
+        exit();
     }
+}
+
+function AddRecipe($title, $recipe, $author)
+{
+    require_once('add.php');
+    echo $title;
+    echo $recipe;
+    echo $author;
 }

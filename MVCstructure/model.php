@@ -71,3 +71,20 @@ function deleteRecipe($id)
     echo 'Caught exception: ', $e->getMessage(), "\n";
   }
 }
+
+function postRecipe($title, $recipe, $author)
+{
+  try {
+    $pdo = connectdb();
+    $sql = "INSERT INTO recipes (title, recipe, author)
+            VALUES (:title, :recipe, :author)";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(array(
+      ':title' => $title,
+      ':recipe' => $recipe,
+      ':author' => $author
+    ));
+  } catch (Exception $e) {
+    echo $e->getMessage();
+  }
+}
