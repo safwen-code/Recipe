@@ -1,19 +1,19 @@
 <?php
-require_once('model.php');
+require_once('./model/model.php');
 function AllRecipes()
 {
     $recipes = GetAllRecipe();
-    require('displayRecipes.php');
+    require('./view/displayRecipes.php');
 }
 function RecipesByID($id)
 {
     $recipe = GETRecipeById($id);
-    require('detailRecipe.php');
+    require('./view/detailRecipe.php');
 }
 function DeleteById($idGet, $idPost)
 {
     $recipe = GETRecipeById($idGet);
-    require_once('deleteRecipe.php');
+    require_once('./view/deleteRecipe.php');
     if (isset($idPost)) {
         deleteRecipe($idPost);
         header('Location: index.php');
@@ -23,7 +23,7 @@ function DeleteById($idGet, $idPost)
 function UpdateByID($idGet, $idPost, $title, $recipe, $author)
 {
     $row = GETRecipeById($idGet);
-    require_once('updateRecipe.php');
+    require_once('./view/updateRecipe.php');
     if (isset($idPost)) {
         updateRecipe($idPost, $title, $recipe, $author);
         header('Location: index.php');
@@ -33,6 +33,6 @@ function UpdateByID($idGet, $idPost, $title, $recipe, $author)
 
 function AddRecipe($title, $recipe, $author)
 {
-    require_once('add.php');
+    require_once('./view/add.php');
     postRecipe($title, $recipe, $author);
 }
