@@ -1,5 +1,8 @@
 <?php
 require_once('model/Manager.php');
+
+namespace safwen\blog\Model;
+
 class RecipeManager extends Manager
 {
     public function GetAllRecipe()
