@@ -1,7 +1,7 @@
 <?php
-class Manger
+class Manager
 {
-    private function connectDB()
+    protected function connectDB()
     {
         try {
             $pdo = new PDO('mysql:host=localhost; dbname=we_love_food', 'root');

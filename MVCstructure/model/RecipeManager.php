@@ -1,5 +1,6 @@
 <?php
-class RecipeManager
+require_once('model/Manager.php');
+class RecipeManager extends Manager
 {
     public function GetAllRecipe()
     {
