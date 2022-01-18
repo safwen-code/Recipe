@@ -1,7 +1,10 @@
 <?php
-require_once('model/Manager.php');
 
 namespace safwen\blog\Model;
+
+require_once('model/Manager.php');
+
+
 
 class RecipeManager extends Manager
 {
@@ -14,7 +17,7 @@ class RecipeManager extends Manager
             $stmt->execute();
             $row = $stmt->fetchAll();
             return $row;
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             echo 'Caught exception: ', $e->getMessage(), "\n";
         }
     }
@@ -27,9 +30,9 @@ class RecipeManager extends Manager
             $stmt->execute(array(
                 ':id' => $id,
             ));
-            $recipe = $stmt->fetch(PDO::FETCH_ASSOC);
+            $recipe = $stmt->fetch(\PDO::FETCH_ASSOC);
             return $recipe;
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             echo 'Caught exception: ', $e->getMessage(), "\n";
         }
     }
@@ -48,7 +51,7 @@ class RecipeManager extends Manager
                 ':author' => $author,
 
             ));
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             echo 'Caught exception: ', $e->getMessage(), "\n";
         }
     }
@@ -64,7 +67,7 @@ class RecipeManager extends Manager
                 ':recipe' => $recipe,
                 ':author' => $author
             ));
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             echo $e->getMessage();
         }
     }
@@ -77,7 +80,7 @@ class RecipeManager extends Manager
             $stmt->execute([
                 ':id' => $id
             ]);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             echo 'Caught exception: ', $e->getMessage(), "\n";
         }
     }
