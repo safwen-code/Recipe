@@ -26,8 +26,6 @@ function UpdateByID($idGet, $idPost, $title, $recipe, $author)
     require_once('./view/updateRecipe.php');
     if (isset($idPost)) {
         updateRecipe($idPost, $title, $recipe, $author);
-        header('Location: index.php');
-        exit();
     }
 }
 

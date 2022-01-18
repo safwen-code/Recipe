@@ -15,7 +15,7 @@
     <div class="container mt-3">
 
         <h3 class="d-flex justify-content-center">Edit User</h3>
-        <form method="post" action="">
+        <form method="post" action="index.php?action=updateRecipe&amp;recipe_id=<?= $_GET['recipe_id'] ?>">
             <div class="row mb-3">
                 <label class="col-sm-2 col-form-label">titel:</label>
                 <div class="col-sm-10">
